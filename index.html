@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Inscription Cours d'essai EJT Bruges 2026-2027</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #0b1f47;
+      --navy2:  #132a5e;
+      --red:    #cc2418;
+      --red-bg: #fdf2f2;
+      --bg:     #edf0f5;
+      --border: #dde3ee;
+      --muted:  #64748b;
+      --text:   #0f172a;
+      --ok:     #16a34a;
+    }
+    *, *::before, *::after { box-sizing:border-box;margin:0;padding:0; }
+    body { font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100dvh; }
+
+    #offline-bar { position:fixed;top:0;left:0;right:0;z-index:200;background:var(--red);color:#fff;text-align:center;padding:.5rem 1rem;font-size:.8rem;font-weight:600;transform:translateY(-100%);transition:transform .3s; }
+    #offline-bar.show { transform:translateY(0); }
+
+    .app-header { position:sticky;top:0;z-index:100;background:var(--navy);box-shadow:0 2px 12px rgba(0,0,0,.35); }
+    .header-inner { display:flex;align-items:center;gap:.75rem;padding:.85rem 1.25rem; }
+    .club-name { font-family:'DM Sans',sans-serif;font-size:2rem;font-weight:600;letter-spacing:.06em;color:#fff;text-transform:uppercase;line-height:1.1; }
+    .form-sub { font-size:.72rem;color:rgba(255,255,255,.6); }
+    .progress-meta { display:flex;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.65);margin-bottom:.4rem; }
+    .progress-track { height:5px;background:rgba(255,255,255,.18);border-radius:3px; }
+    .progress-fill { height:100%;background:var(--red);border-radius:3px;transition:width .45s cubic-bezier(.4,0,.2,1); }
+
+    .page-wrap { max-width:min(900px,95%);margin:0 auto;padding:1.1rem .9rem 5rem; }
+    .card { background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.07),0 6px 24px rgba(0,0,0,.07);overflow:hidden; }
+
+    .step-hd { background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-left:5px solid var(--red);padding:1.1rem 1.4rem;color:#fff; }
+    .hd-title { font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:400;letter-spacing:.02em; }
+    .hd-sub { font-size:.72rem;color:rgba(255,255,255,.6);margin-top:1px; }
+
+    .panel { display:none; }
+    .panel.active { display:block;animation:slideIn .3s cubic-bezier(.4,0,.2,1); }
+    @keyframes slideIn { from{opacity:0;transform:translateX(14px)} to{opacity:1;transform:translateX(0)} }
+
+    .alert { margin:.9rem 1.3rem 0;padding:.7rem .95rem;border-radius:8px;font-size:.8rem;line-height:1.55; }
+    .a-info    { background:#eff6ff;border-left:3px solid #3b82f6;color:#1e40af; }
+    .a-warning { background:#fffbeb;border-left:3px solid #f59e0b;color:#7c4a00; }
+
+    .fields { padding:1.1rem 1.3rem; }
+    .field { margin-bottom:1.05rem; }
+    .field:last-child { margin-bottom:0; }
+    .flabel { display:block;font-size:.71rem;font-weight:600;letter-spacing:.055em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem; }
+    .req { color:var(--red); }
+    .fdesc { font-size:.76rem;color:var(--muted);margin-bottom:.35rem;line-height:1.45; }
+
+    .finput { width:100%;padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.93rem;color:var(--text);background:#f8fafc;outline:none;transition:border-color .18s,box-shadow .18s,background .18s;-webkit-appearance:none; }
+    .finput::placeholder { color:#b0bac9; }
+    .finput:focus { border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(11,31,71,.1); }
+    .finput.err { border-color:var(--red);box-shadow:0 0 0 3px rgba(204,36,24,.1); }
+    textarea.finput { resize:vertical;min-height:90px; }
+    select.finput { cursor:pointer; }
+
+    .ferr { display:none;font-size:.73rem;font-weight:500;color:var(--red);margin-top:.28rem; }
+    .ferr.show { display:block; }
+
+    .grid2 { display:grid;grid-template-columns:1fr 1fr;gap:.75rem; }
+    @media(max-width:400px){ .grid2{grid-template-columns:1fr;} }
+
+    .choices { display:flex;flex-direction:column;gap:.4rem; }
+    .choice { display:flex;align-items:flex-start;gap:.7rem;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:9px;cursor:pointer;background:#f8fafc;transition:border-color .15s,background .15s;user-select:none; }
+    .choice:hover { border-color:var(--navy);background:#f0f4fb; }
+    .choice.selected { border-color:var(--navy);background:#eef2fb; }
+    .choice.suggested { border-color:var(--ok)!important;background:#f0fdf4!important; }
+    .choice.suggested.selected { border-color:var(--navy)!important;background:#eef2fb!important; }
+    .choice input { display:none; }
+
+    .cdot { flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .15s; }
+    .choice.selected .cdot { background:var(--navy);border-color:var(--navy); }
+    .choice.selected .cdot::after { content:'';width:6px;height:6px;background:#fff;border-radius:50%; }
+
+    .csq { flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:4px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .15s; }
+    .choice.selected .csq { background:var(--navy);border-color:var(--navy); }
+    .choice.selected .csq::after { content:'✓';color:#fff;font-size:11px;font-weight:700; }
+
+    .ctext { font-size:.86rem;line-height:1.4;color:var(--text); }
+
+    /* ─── CRÉNEAU AUTO VERROUILLÉ ─────────────────────── */
+    .choice.locked { pointer-events:none;cursor:default; }
+    .choice.locked:not(.selected) { opacity:.38; }
+    .choice.selected.locked { border-color:var(--navy);background:#eef2fb; }
+    .creneau-err-box { background:#fffbeb;border:1.5px solid #f59e0b;border-radius:10px;padding:.8rem 1rem;font-size:.82rem;color:#7c4a00;line-height:1.5; }
+
+    .divider { border:none;border-top:1px solid var(--border);margin:1.1rem 0; }
+    .sec-label { font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);margin-bottom:.55rem; }
+    .sec-sub { font-size:.76rem;color:var(--muted);margin-bottom:.7rem;line-height:1.5; }
+
+    /* ─── CALENDRIER ──────────────────────────────────── */
+    .cal-wrap { border:1.5px solid var(--border);border-radius:12px;overflow:hidden; }
+    .cal-header { display:flex;align-items:center;justify-content:space-between;padding:.65rem .9rem;background:var(--navy); }
+    .cal-month-label { font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;color:#fff; }
+    .cal-nav-btn { background:rgba(255,255,255,.15);border:none;border-radius:6px;color:#fff;width:30px;height:30px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .15s; }
+    .cal-nav-btn:hover:not(:disabled) { background:rgba(255,255,255,.3); }
+    .cal-nav-btn:disabled { opacity:.3;cursor:not-allowed; }
+    .cal-dow-row { display:grid;grid-template-columns:repeat(7,1fr);background:#f8fafc;border-bottom:1px solid var(--border); }
+    .cal-dow { text-align:center;padding:.35rem 0;font-size:.63rem;font-weight:700;color:var(--muted);text-transform:uppercase; }
+    .cal-dow.hl { color:var(--navy); }
+    .cal-days { display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:.45rem; }
+    .cal-day { aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:.83rem;color:#cbd5e1;position:relative; }
+    .cal-day.active { background:#eef2fb;color:var(--navy);cursor:pointer;font-weight:600;border:1.5px solid transparent;transition:all .12s; }
+    .cal-day.active:hover { background:#dce7f6;border-color:var(--navy2); }
+    .cal-day.today { border:1.5px solid var(--red)!important;color:var(--red)!important;font-weight:700; }
+    .cal-day.selected { background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important;font-weight:700; }
+    .cal-day.past { opacity:.28;cursor:not-allowed; }
+    .cal-placeholder { padding:1.6rem 1rem;text-align:center;color:var(--muted);font-size:.83rem;background:#f8fafc;border:1.5px dashed var(--border);border-radius:12px; }
+    .date-chosen { margin-top:.5rem;font-size:.8rem;font-weight:600;color:var(--ok);min-height:1.2rem; }
+
+    /* ─── RÈGLEMENT ───────────────────────────────────── */
+    .reglement-box { background:#f8fafc;border:1.5px solid var(--border);border-radius:10px;padding:1rem 1.1rem;font-size:.8rem;line-height:1.75;color:var(--text);margin-bottom:1rem; }
+    .reglement-box ol { padding-left:1.2rem; }
+    .reglement-box li { margin-bottom:.2rem; }
+
+    .nav-bar { display:flex;gap:.7rem;padding:.9rem 1.3rem;border-top:1px solid var(--border); }
+    .btn { display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.78rem 1rem;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .18s; }
+    .btn-p { flex:1;background:var(--navy);color:#fff; }
+    .btn-p:hover:not(:disabled) { background:var(--navy2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(11,31,71,.25); }
+    .btn-p:active:not(:disabled) { transform:translateY(0); }
+    .btn-p:disabled { opacity:.6;cursor:not-allowed;transform:none; }
+    .btn-s { flex:.55;background:#fff;color:var(--muted);border:1.5px solid var(--border); }
+    .btn-s:hover { border-color:var(--navy);color:var(--navy); }
+    .spinner { width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none; }
+    .btn-p.loading .spinner { display:block; }
+    .btn-p.loading .blabel { opacity:.7; }
+    @keyframes spin { to{transform:rotate(360deg)} }
+
+    .err-global { display:none;margin:0 1.3rem .8rem;padding:.65rem .9rem;background:var(--red-bg);border:1px solid rgba(204,36,24,.25);border-radius:8px;font-size:.8rem;font-weight:500;color:#9b1c1c; }
+    .err-global.show { display:block; }
+
+    .success-screen { display:none;text-align:center;padding:2.5rem 1.5rem 2rem; }
+    .success-screen.show { display:block;animation:slideIn .4s ease; }
+    .success-icon { width:76px;height:76px;border-radius:50%;background:var(--navy);margin:0 auto 1.3rem;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 8px 24px rgba(11,31,71,.3); }
+    .success-title { font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:.4rem; }
+    .success-msg { font-size:.87rem;color:var(--muted);line-height:1.65;max-width:360px;margin:0 auto; }
+  </style>
+</head>
+<body>
+
+<div id="offline-bar">⚡ Connexion internet perdue — vérifiez votre réseau</div>
+
+<header class="app-header">
+  <div class="header-inner">
+    <img src="logo_EJT_cercle_2024.png" style="height:50px;width:auto;" />
+    <div style="flex:1;min-width:0;">
+      <div class="club-name">EJT Bruges</div>
+      <div class="form-sub">Inscription Cours d'essai — Saison 2026-2027</div>
+    </div>
+    <div style="flex:2;min-width:0;padding-left:1.5rem;">
+      <div class="progress-meta">
+        <span id="prog-label">Étape 1 sur 4</span>
+        <span id="prog-pct">25%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog-fill" style="width:25%"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap"><div class="card">
+
+  <div class="step-hd" id="step-hd">
+    <div class="hd-title" id="hd-title">👤 Identité &amp; Contact</div>
+    <div class="hd-sub"  id="hd-sub">Section 1 — Informations personnelles</div>
+  </div>
+
+  <!-- ══ PANEL 1 : IDENTITÉ & CONTACT ════════════════════ -->
+  <div class="panel active" id="p1">
+    <div class="alert a-info">
+      Veuillez remplir ce formulaire pour inscrire la personne à un cours d'essai.<br>
+      <strong>L'inscription est obligatoire pour pouvoir essayer.</strong>
+    </div>
+    <div class="fields">
+
+      <div class="sec-label">Identité de la personne qui essaye</div>
+      <div class="grid2">
+        <div class="field">
+          <label class="flabel" for="f-nom">NOM <span class="req">*</span></label>
+          <input class="finput" type="text" id="f-nom" placeholder="DUPONT" autocomplete="family-name"/>
+          <div class="ferr" id="f-nom-e">Ce champ est obligatoire</div>
+        </div>
+        <div class="field">
+          <label class="flabel" for="f-prenom">Prénom <span class="req">*</span></label>
+          <input class="finput" type="text" id="f-prenom" placeholder="Marie" autocomplete="given-name"/>
+          <div class="ferr" id="f-prenom-e">Ce champ est obligatoire</div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="flabel" for="f-ddn">Date de naissance <span class="req">*</span></label>
+        <p class="fdesc">JJ/MM/AAAA</p>
+        <input class="finput" type="text" id="f-ddn" placeholder="15/06/2018" inputmode="numeric" maxlength="10"/>
+        <div class="ferr" id="f-ddn-e">Veuillez entrer une date valide au format JJ/MM/AAAA</div>
+      </div>
+
+      <hr class="divider"/>
+      <div class="sec-label">Contact</div>
+      <p class="sec-sub">Personne remplissant ce formulaire.&nbsp;</p>
+      <p class="sec-sub">Si le judoka est majeur, sélectionnez « Le judoka lui-même ».</p>
+
+      <div class="field">
+        <label class="flabel" for="f-qualite">Qualité <span class="req">*</span></label>
+        <select class="finput" id="f-qualite">
+          <option value="">— Choisissez —</option>
+          <option>Le judoka lui-même</option>
+          <option>Mère</option>
+          <option>Père</option>
+          <option>Tuteur légal</option>
+          <option>Autre représentant légal</option>
+        </select>
+        <div class="ferr" id="f-qualite-e">Veuillez sélectionner une qualité</div>
+      </div>
+      <div class="field">
+        <label class="flabel" for="f-email">Adresse e-mail <span class="req">*</span></label>
+        <input class="finput" type="email" id="f-email" placeholder="prenom.nom@exemple.fr" autocomplete="email" inputmode="email"/>
+        <div class="ferr" id="f-email-e">Veuillez entrer une adresse e-mail valide</div>
+      </div>
+      <div class="field">
+        <label class="flabel" for="f-tel">Numéro de téléphone <span class="req">*</span></label>
+        <input class="finput" type="tel" id="f-tel" placeholder="06 12 34 56 78" autocomplete="tel"/>
+        <div class="ferr" id="f-tel-e">Ce champ est obligatoire</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ PANEL 2 : CRÉNEAU + CALENDRIER ══════════════════ -->
+  <div class="panel active" id="p2">
+    <div class="fields">
+
+      <div class="field">
+        <div class="sec-label">Créneau cours d'essai</div>
+        <p class="fdesc">Le créneau est automatiquement attribué selon l'année de naissance — non modifiable.</p>
+        <div class="choices" id="creneau-g"></div>
+        <div id="creneau-err-box" class="creneau-err-box" style="display:none;">
+          &#x26A0;&#xFE0F; Nous ne proposons pas de cours d'essai pour cet âge. Merci de contacter le club directement.
+        </div>
+        <input type="hidden" id="f-creneau"/>
+      </div>
+
+      <div class="field" id="jujitsu-field" style="display:none;">
+        <label class="choice" id="cb-jujitsu">
+          <input type="checkbox" id="f-jujitsu"/>
+          <div class="csq"></div>
+          <div class="ctext">Je souhaite essayer le <strong>Jujitsu</strong> plutôt que le Judo <span style="font-size:.74rem;color:var(--muted)">— Mercredi 19h30–21h00</span></div>
+        </label>
+      </div>
+
+      <hr class="divider"/>
+
+      <div class="sec-label">Date de l'essai <span class="req">*</span></div>
+      <p class="sec-sub" id="cal-hint">&#x1F4C5; Seuls les jours correspondant au creneau attribue sont cliquables. Le calendrier demarre au 28 aout 2026.</p>
+
+      <div id="cal-placeholder" class="cal-placeholder" style="display:none;">
+        &#x1F4C5; Le calendrier s'affichera ici
+      </div>
+      <div class="cal-wrap" id="cal-wrap" style="display:none;">
+        <div class="cal-header">
+          <button class="cal-nav-btn" id="cal-prev" onclick="calNav(-1)">‹</button>
+          <span class="cal-month-label" id="cal-month-label"></span>
+          <button class="cal-nav-btn" id="cal-next" onclick="calNav(1)">›</button>
+        </div>
+        <div class="cal-dow-row" id="cal-dow-row"></div>
+        <div class="cal-days" id="cal-days"></div>
+      </div>
+
+      <input type="hidden" id="f-date-essai"/>
+      <div class="date-chosen" id="date-chosen-label"></div>
+      <div class="ferr" id="f-date-essai-e">Veuillez sélectionner une date dans le calendrier</div>
+
+    </div>
+  </div>
+
+  <!-- ══ PANEL 3 : INFORMATIONS MÉDICALES ════════════════ -->
+  <div class="panel" id="p3">
+    <div class="alert a-warning">
+      Cette section est <strong>facultative</strong>. Si la personne n'a aucune particularité médicale, vous pouvez passer directement à l'étape suivante.
+    </div>
+    <div class="fields">
+      <div class="field">
+        <label class="flabel" for="f-medical">Informations médicales à communiquer</label>
+        <p class="fdesc">Allergies, traitement en cours, asthme, toute information utile pour l'encadrement pendant le cours d'essai</p>
+        <textarea class="finput" id="f-medical" placeholder="Ex : Asthme léger — Ventoline dans le sac. Allergie aux arachides. Aucune contre-indication connue..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANEL 4 : RÈGLEMENT + VALIDATION ════════════════ -->
+  <div class="panel" id="p4">
+    <div class="alert a-info">
+      Merci de lire attentivement le règlement avant de valider votre inscription.
+    </div>
+    <div class="fields">
+      <div class="sec-label">📋 Règlement Cours d'essais EJT — ES Bruges</div>
+      <div class="reglement-box">
+        <ol>
+          <li>Pour tout cours d'essai, l'inscription est obligatoire (via le formulaire en ligne).</li>
+          <li>Ne rien faire qui soit susceptible d'entacher l'honneur de l'École de Judo Traditionnelle.</li>
+          <li>Ne pas pratiquer le Judo hors du contrôle d'un Professeur diplômé d'État qui a obligatoirement la responsabilité des cours dispensés, conformément au statut de la FFJDA.</li>
+          <li>Certifie que l'essayant est apte médicalement.</li>
+          <li>Ne pénétrer dans le Dojo (lieu où l'on étudie la Voie) qu'en tenue correcte, dans le respect de soi-même et de ses camarades.</li>
+          <li>L'essayant doit avoir une tenue propre et adaptée de préférence (t-shirt manche longue et pantalon type jogging ou legging long).</li>
+          <li>Respecter le Tatami (tapis de judo) en ne pénétrant sur celui-ci que déchaussé, avec les mains et les pieds propres, ongles soigneusement coupés pour éviter de blesser ses partenaires.</li>
+          <li>Tout mineur ne peut adhérer qu'avec l'accord écrit de son représentant légal.</li>
+          <li>La responsabilité de la section n'est engagée que pendant les heures de cours et dans le Dojo.</li>
+          <li>La responsabilité de l'EJT ne peut être engagée dans les vestiaires.</li>
+          <li>Des sanctions peuvent être prononcées par le Bureau Directeur de l'EJT. Tout membre ayant contrevenu aux dispositions des règlements en vigueur, aux statuts de l'ESB ou à ceux de la FFJDA sera sanctionné.</li>
+          <li>Les statuts de l'EJT, de l'ESB de la FFJDA ainsi que leurs règlements intérieurs sont à la disposition des parents et des adhérents au bureau de l'EJT.</li>
+          <li><strong>À respecter le professeur et les judokas en maintenant le silence durant le cours.</strong></li>
+        </ol>
+      </div>
+
+      <div class="field">
+        <div class="choices">
+          <label class="choice" id="cb-certifie">
+            <input type="checkbox" id="f-certifie"/>
+            <div class="csq"></div>
+            <div class="ctext">Je certifie que les informations renseignées sont exactes</div>
+          </label>
+        </div>
+        <div class="ferr" id="f-certifie-e">Vous devez certifier l'exactitude des informations</div>
+      </div>
+      <div class="field">
+        <div class="choices">
+          <label class="choice" id="cb-reglement">
+            <input type="checkbox" id="f-reglement"/>
+            <div class="csq"></div>
+            <div class="ctext">J'ai lu et j'accepte le règlement du cours d'essai et ses conditions</div>
+          </label>
+        </div>
+        <div class="ferr" id="f-reglement-e">Vous devez accepter le règlement du cours d'essai</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SUCCÈS ══════════════════════════════════════════ -->
+  <div class="success-screen" id="success-screen">
+    <div class="success-icon">🥋</div>
+    <div class="success-title">Inscription enregistrée !</div>
+    <div class="success-msg">
+      Merci pour votre inscription au cours d'essai — Saison 2026-2027.<br><br>
+      Si vous avez un empêchement, merci de nous prévenir au plus vite.<br><br>
+      <strong>Tenue conseillée :</strong> t-shirt à manches longues et pantalon de type jogging ou legging long. Une petite bouteille d'eau est la bienvenue.<br><br>
+      ⚠️ Il n'y a pas de possibilité d'assister aux cours (pas d'espace spectateurs).<br><br>
+      <strong>Bon cours ! 🎌</strong>
+    </div>
+  </div>
+
+  <div class="err-global" id="err-global"></div>
+
+  <div class="nav-bar" id="nav-bar">
+    <button class="btn btn-s" id="btn-prev" onclick="go(-1)" style="display:none">← Retour</button>
+    <button class="btn btn-p" id="btn-next" onclick="go(1)">
+      <span class="spinner"></span>
+      <span class="blabel" id="btn-label">Continuer →</span>
+    </button>
+  </div>
+
+</div></div>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────────
+const SCRIPT_URL = 'COLLER_URL_DU_SCRIPT_ICI';
+
+const TOT = 4;
+let cur  = 1;
+
+const STEPS = [
+  { title:'👤 Identité & Contact',       sub:'Section 1 — Informations personnelles' },
+  { title:'📅 Date de l\'essai',          sub:'Section 2 — Créneau & calendrier' },
+  { title:'🩺 Informations médicales',    sub:'Section 3 — Santé (facultatif)' },
+  { title:'📋 Règlement & Validation',    sub:'Section 4 — Règlement cours d\'essai' },
+];
+
+// ── CRÉNEAU PAR ANNÉE DE NAISSANCE ───────────────────────
+// allowedDays : 0=dim 1=lun 2=mar 3=mer 4=jeu 5=ven 6=sam
+const CRENEAU_LIST = [
+  { label:'BabyJudo - le Mercredi : 17h30–18h30',          note:'Né en 2022',           days:[3],   minY:2022, maxY:2022 },
+  { label:'Judo - les Mardi & Vendredi : 17h30–18h30',     note:'Né en 2021 et 2020',   days:[2,5], minY:2020, maxY:2021 },
+  { label:'Judo - les Mardi & Vendredi : 18h30–20h00',     note:'Né de 2019 à 2016',    days:[2,5], minY:2016, maxY:2019 },
+  { label:'Judo - les Mardi & Vendredi : 20h00–22h00',     note:'Né en 2015 et avant',  days:[2,5], minY:0,    maxY:2015 },
+];
+const CRENEAU_JUJITSU = { label:'Jujitsu - Mercredi 19h30–21h00', days:[3] };
+
+const DOW_SHORT  = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+const MONTHS_FR  = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const MONTHS_GEN = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const DAYS_FR    = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+
+// ── CALENDRIER (état) ────────────────────────────────────
+const CAL_MIN = new Date(2026, 7, 28); // 28 août 2026 — premier jour des essais
+CAL_MIN.setHours(0,0,0,0);
+let calYear  = CAL_MIN.getFullYear();
+let calMonth = CAL_MIN.getMonth();
+let selectedDate = null;
+let activeDays   = [];
+
+function getCreneauIdx(ddn) {
+  if (!ddn || !/^\d{2}\/\d{2}\/\d{4}$/.test(ddn)) return -1;
+  const y = parseInt(ddn.split('/')[2]);
+  return CRENEAU_LIST.findIndex(c => y >= c.minY && y <= c.maxY);
+}
+
+function showCreneauAuto() {
+  const g       = ge('creneau-g');
+  const errBox  = ge('creneau-err-box');
+  const jjField = ge('jujitsu-field');
+  const calWrap = ge('cal-wrap');
+  const ddn     = val('ddn');
+  const idx     = getCreneauIdx(ddn);
+  const isJJ    = cbV('f-jujitsu');
+
+  // Construire la liste verrouillée
+  g.innerHTML = CRENEAU_LIST.map((c, i) => {
+    const isSel = (i === idx);
+    return `<div class="choice locked${isSel ? ' selected' : ''}">
+      <div class="cdot"></div>
+      <div class="ctext">${c.label}
+        <span style="font-size:.74rem;color:var(--muted)"> — ${c.note}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  if (idx >= 0) {
+    errBox.style.display = 'none';
+    const effective = isJJ ? CRENEAU_JUJITSU : CRENEAU_LIST[idx];
+    ge('f-creneau').value = effective.label;
+    activeDays = effective.days;
+
+    // Jujitsu : visible seulement pour nés en 2018 et avant
+    const birthYear = parseInt(ddn.split('/')[2]);
+    jjField.style.display = birthYear <= 2018 ? '' : 'none';
+    if (birthYear > 2018) {
+      // S'assurer que la case Jujitsu est décochée si on revient
+      ge('cb-jujitsu').classList.remove('selected');
+      ge('f-jujitsu').checked = false;
+    }
+
+    // Reset date + affichage calendrier
+    selectedDate = null;
+    ge('f-date-essai').value = '';
+    ge('date-chosen-label').textContent = '';
+    calYear  = CAL_MIN.getFullYear();
+    calMonth = CAL_MIN.getMonth();
+    calWrap.style.display = '';
+    renderCal();
+  } else {
+    // Aucun créneau correspondant
+    errBox.style.display = '';
+    ge('f-creneau').value = '';
+    jjField.style.display = 'none';
+    calWrap.style.display = 'none';
+    activeDays = [];
+  }
+}
+
+function renderCal() {
+  ge('cal-month-label').textContent = MONTHS_FR[calMonth] + ' ' + calYear;
+  const isMinMonth = (calYear === CAL_MIN.getFullYear() && calMonth === CAL_MIN.getMonth());
+  ge('cal-prev').disabled = isMinMonth;
+
+  // En-têtes
+  ge('cal-dow-row').innerHTML = DOW_SHORT.map((d, i) =>
+    `<div class="cal-dow${activeDays.includes(i) ? ' hl' : ''}">${d}</div>`
+  ).join('');
+
+  const firstDow    = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  let html = '';
+  for (let i = 0; i < firstDow; i++) html += '<div class="cal-day"></div>';
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dt  = new Date(calYear, calMonth, d);
+    dt.setHours(0,0,0,0);
+    const dow     = dt.getDay();
+    const allowed = activeDays.includes(dow);
+    const isPast  = dt < CAL_MIN;
+    const isFirst = dt.getTime() === CAL_MIN.getTime();
+    const dStr    = `${String(d).padStart(2,'0')}/${String(calMonth+1).padStart(2,'0')}/${calYear}`;
+    const isSel   = selectedDate === dStr;
+
+    let cls = 'cal-day';
+    if (!isPast && allowed) cls += ' active';
+    else if (isPast)        cls += ' past';
+    if (isFirst) cls += ' today'; // Surligne le 28/08/2026 comme point de départ
+    if (isSel)   cls += ' selected';
+
+    const onclick = (!isPast && allowed) ? `onclick="pickDate('${dStr}')"` : '';
+    html += `<div class="${cls}" ${onclick}>${d}</div>`;
+  }
+  ge('cal-days').innerHTML = html;
+}
+
+function pickDate(dStr) {
+  selectedDate = dStr;
+  ge('f-date-essai').value = dStr;
+  ge('f-date-essai-e').classList.remove('show');
+  const [dd,mm,yyyy] = dStr.split('/');
+  const dt = new Date(parseInt(yyyy), parseInt(mm)-1, parseInt(dd));
+  ge('date-chosen-label').textContent = '✅ Date choisie : ' + DAYS_FR[dt.getDay()] + ' ' + dd + ' ' + MONTHS_GEN[parseInt(mm)-1] + ' ' + yyyy;
+  renderCal();
+}
+
+function calNav(dir) {
+  calMonth += dir;
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  if (calMonth < 0)  { calMonth = 11; calYear--; }
+  renderCal();
+}
+
+// ── HELPERS ──────────────────────────────────────────────
+const ge  = id => document.getElementById(id);
+const val = id => ge('f-'+id)?.value.trim() ?? '';
+const cbV = id => ge(id)?.checked ?? false;
+
+function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+function isDate(v)  { return /^\d{2}\/\d{2}\/\d{4}$/.test(v); }
+
+function setErr(fid, msg, show) {
+  const f = ge('f-'+fid);
+  const e = ge('f-'+fid+'-e') || ge(fid+'-e');
+  if (f) f.classList.toggle('err', show);
+  if (e) { if (msg) e.textContent = msg; e.classList.toggle('show', show); }
+}
+
+function initCb(cbId, inputId) {
+  const el = ge(cbId);
+  if (!el) return;
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    el.classList.toggle('selected');
+    ge(inputId).checked = el.classList.contains('selected');
+  });
+}
+
+// ── VALIDATION ───────────────────────────────────────────
+function validate(step) {
+  let ok = true;
+  ge('err-global')?.classList.remove('show');
+
+  if (step === 1) {
+    if (!val('nom'))    { setErr('nom','Ce champ est obligatoire',true); ok=false; }    else setErr('nom','',false);
+    if (!val('prenom')) { setErr('prenom','Ce champ est obligatoire',true); ok=false; } else setErr('prenom','',false);
+
+    const ddn = val('ddn');
+    if (!ddn || !isDate(ddn)) { setErr('ddn','Veuillez entrer une date valide au format JJ/MM/AAAA',true); ok=false; } else setErr('ddn','',false);
+
+    if (!ge('f-qualite').value) { setErr('qualite','Veuillez sélectionner une qualité',true); ok=false; } else setErr('qualite','',false);
+
+    const email = val('email');
+    if (!email || !isEmail(email)) { setErr('email','Veuillez entrer une adresse e-mail valide',true); ok=false; } else setErr('email','',false);
+
+    if (!val('tel')) { setErr('tel','Ce champ est obligatoire',true); ok=false; } else setErr('tel','',false);
+  }
+
+  if (step === 2) {
+    if (!ge('f-creneau').value) {
+      ge('f-date-essai-e').classList.remove('show');
+      ge('err-global').textContent = '⚠️ Aucun créneau disponible pour cet âge. Merci de contacter le club.';
+      ge('err-global').classList.add('show');
+      return false;
+    }
+    if (!ge('f-date-essai').value) {
+      ge('f-date-essai-e').classList.add('show'); ok=false;
+    } else { ge('f-date-essai-e').classList.remove('show'); }
+  }
+
+  // Étape 3 : tout facultatif, pas de validation
+
+  if (step === 4) {
+    if (!cbV('f-certifie'))  { ge('f-certifie-e').classList.add('show'); ok=false; }  else ge('f-certifie-e').classList.remove('show');
+    if (!cbV('f-reglement')) { ge('f-reglement-e').classList.add('show'); ok=false; } else ge('f-reglement-e').classList.remove('show');
+  }
+
+  if (!ok) ge('err-global').classList.add('show');
+  return ok;
+}
+
+// ── NAVIGATION ───────────────────────────────────────────
+function goTo(n) {
+  ge('p'+cur).classList.remove('active');
+  cur = n;
+  ge('p'+cur).classList.add('active');
+
+  const pct = Math.round(cur/TOT*100);
+  ge('prog-fill').style.width = pct+'%';
+  ge('prog-label').textContent = `Étape ${cur} sur ${TOT}`;
+  ge('prog-pct').textContent   = pct+'%';
+
+  const s = STEPS[cur-1];
+  ge('hd-title').textContent = s.title;
+  ge('hd-sub').textContent   = s.sub;
+  ge('btn-prev').style.display = cur>1?'':'none';
+  ge('btn-label').textContent  = cur===TOT ? 'Envoyer ✓' : 'Continuer →';
+
+  if (n === 2) showCreneauAuto(); // Affiche le créneau auto selon la date de naissance
+
+  ge('err-global')?.classList.remove('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+async function go(dir) {
+  if (dir === 1) {
+    if (!validate(cur)) return;
+    if (cur === TOT) { await submit(); return; }
+    goTo(cur+1);
+  } else {
+    if (cur > 1) goTo(cur-1);
+  }
+}
+
+// ── SUBMIT ───────────────────────────────────────────────
+async function submit() {
+  if (!navigator.onLine) { showGErr('⚡ Connexion internet perdue. Vérifiez votre réseau.'); return; }
+  setLoad(true);
+
+  const data = {
+    email              : val('email'),
+    nom                : val('nom').toUpperCase(),
+    prenom             : val('prenom'),
+    dateNaissance      : val('ddn'),
+    qualite            : ge('f-qualite').value,
+    telephone          : val('tel'),
+    creneauEssai       : ge('f-creneau').value,
+    dateEssai          : ge('f-date-essai').value,
+    infosMedicales     : ge('f-medical').value.trim() || 'RAS',
+    validationInfos    : cbV('f-certifie')   ? 'Je certifie que les informations sont exactes' : '',
+    validationReglement: cbV('f-reglement')  ? "J'ai lu et j'accepte le r\u00e8glement du cours d'essai et ses conditions" : '',
+    timestamp          : new Date().toLocaleString('fr-FR'),
+  };
+
+  try {
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    showSuccess();
+  } catch(e) {
+    console.error(e);
+    setLoad(false);
+    showGErr(navigator.onLine ? '❌ Une erreur est survenue. Veuillez réessayer.' : '⚡ Connexion perdue pendant l\'envoi.');
+  }
+}
+
+function setLoad(on) { ge('btn-next').disabled=on; ge('btn-next').classList.toggle('loading',on); }
+function showGErr(m) { const b=ge('err-global'); b.textContent=m; b.classList.add('show'); }
+function showSuccess() {
+  ge('step-hd').style.display='none';
+  document.querySelectorAll('.panel').forEach(p=>p.style.display='none');
+  ge('nav-bar').style.display='none';
+  ge('success-screen').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── INIT ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initCb('cb-certifie',  'f-certifie');
+  initCb('cb-reglement', 'f-reglement');
+
+  // Jujitsu : recalcule le créneau affiché si coché/décoché
+  ge('cb-jujitsu').addEventListener('click', (e) => {
+    e.preventDefault();
+    ge('cb-jujitsu').classList.toggle('selected');
+    ge('f-jujitsu').checked = ge('cb-jujitsu').classList.contains('selected');
+    showCreneauAuto();
+  });
+
+  ge('f-ddn').addEventListener('input', function() {
+    let v = this.value.replace(/\D/g,'').slice(0,8);
+    if (v.length>2) v = v.slice(0,2)+'/'+v.slice(2);
+    if (v.length>5) v = v.slice(0,5)+'/'+v.slice(5);
+    this.value = v;
+  });
+
+  ge('f-email').addEventListener('blur', function() {
+    if (this.value && !isEmail(this.value)) this.classList.add('err');
+    else if (this.value) this.classList.remove('err');
+  });
+});
+
+window.addEventListener('offline', () => ge('offline-bar').classList.add('show'));
+window.addEventListener('online',  () => ge('offline-bar').classList.remove('show'));
+</script>
+</body>
+</html>
