@@ -1,88 +1,123 @@
-<!DOCTYPE html>
-<html class="light" lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EJT BRUGES</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "background":                "#f9f9f9",
-          "on-primary":                "#ffffff",
-          "outline":                   "#787681",
-          "error":                     "#ba1a1a",
-          "on-error-container":        "#93000a",
-          "secondary-container":       "#d93630",
-          "secondary-fixed-dim":       "#ffb4ab",
-          "surface-container":         "#eeeeee",
-          "primary-container":         "#2d2966",
-          "on-secondary-fixed-variant":"#93000b",
-          "on-tertiary-fixed-variant": "#653e12",
-          "secondary":                 "#b51a1b",
-          "tertiary-fixed-dim":        "#f5bb85",
-          "inverse-surface":           "#2f3131",
-          "tertiary-container":        "#4c2900",
-          "tertiary-fixed":            "#ffdcbf",
-          "secondary-fixed":           "#ffdad6",
-          "inverse-on-surface":        "#f1f1f1",
-          "surface-bright":            "#f9f9f9",
-          "on-tertiary":               "#ffffff",
-          "surface":                   "#f9f9f9",
-          "on-background":             "#1a1c1c",
-          "on-error":                  "#ffffff",
-          "outline-variant":           "#c8c5d1",
-          "surface-container-lowest":  "#ffffff",
-          "primary-fixed-dim":         "#c4c0ff",
-          "surface-container-high":    "#e8e8e8",
-          "on-primary-fixed-variant":  "#433f7d",
-          "primary":                   "#171150",
-          "on-surface-variant":        "#474650",
-          "tertiary":                  "#2e1700",
-          "on-secondary":              "#ffffff",
-          "surface-tint":              "#5b5797",
-          "surface-container-low":     "#f3f3f3",
-          "on-tertiary-fixed":         "#2d1600",
-          "on-primary-fixed":          "#16104f",
-          "surface-variant":           "#e2e2e2",
-          "on-surface":                "#1a1c1c",
-          "on-tertiary-container":     "#c48f5c",
-          "on-primary-container":      "#9692d6",
-          "surface-dim":               "#dadada",
-          "error-container":           "#ffdad6",
-          "surface-container-highest": "#e2e2e2",
-          "on-secondary-fixed":        "#410002",
-          "inverse-primary":           "#c4c0ff",
-          "primary-fixed":             "#e3dfff",
-          "on-secondary-container":    "#fffbff"
-        },
-        borderRadius: {
-          DEFAULT: "0.125rem",
-          lg:      "0.25rem",
-          xl:      "0.5rem",
-          full:    "0.75rem"
-        },
-        fontFamily: {
-          headline: ["Space Grotesk"],
-          body:     ["Inter"],
-          label:    ["Space Grotesk"]
-        }
-      }
-    }
-  }
-</script>
-<style>
-  /* ══ BASE ═══════════════════════════════════════════════════ */
+	<!DOCTYPE html>
+	<html class="light" lang="fr">
+	<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<title>EJT BRUGES</title>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+	<script id="tailwind-config">
+	  tailwind.config = {
+		darkMode: "class",
+		theme: {
+		  extend: {
+			"colors": {
+			  "background": "#f9f9f9",
+			  "on-primary": "#ffffff",
+			  "outline": "#787681",
+			  "error": "#ba1a1a",
+			  "on-error-container": "#93000a",
+			  "secondary-container": "#d93630",
+			  "secondary-fixed-dim": "#ffb4ab",
+			  "surface-container": "#eeeeee",
+			  "primary-container": "#2d2966",
+			  "on-secondary-fixed-variant": "#93000b",
+			  "on-tertiary-fixed-variant": "#653e12",
+			  "secondary": "#b51a1b",
+			  "tertiary-fixed-dim": "#f5bb85",
+			  "inverse-surface": "#2f3131",
+			  "tertiary-container": "#4c2900",
+			  "tertiary-fixed": "#ffdcbf",
+			  "secondary-fixed": "#ffdad6",
+			  "inverse-on-surface": "#f1f1f1",
+			  "surface-bright": "#f9f9f9",
+			  "on-tertiary": "#ffffff",
+			  "surface": "#f9f9f9",
+			  "on-background": "#1a1c1c",
+			  "on-error": "#ffffff",
+			  "outline-variant": "#c8c5d1",
+			  "surface-container-lowest": "#ffffff",
+			  "primary-fixed-dim": "#c4c0ff",
+			  "surface-container-high": "#e8e8e8",
+			  "on-primary-fixed-variant": "#433f7d",
+			  "primary": "#171150",
+			  "on-surface-variant": "#474650",
+			  "tertiary": "#2e1700",
+			  "on-secondary": "#ffffff",
+			  "surface-tint": "#5b5797",
+			  "surface-container-low": "#f3f3f3",
+			  "on-tertiary-fixed": "#2d1600",
+			  "on-primary-fixed": "#16104f",
+			  "surface-variant": "#e2e2e2",
+			  "on-surface": "#1a1c1c",
+			  "on-tertiary-container": "#c48f5c",
+			  "on-primary-container": "#9692d6",
+			  "surface-dim": "#dadada",
+			  "error-container": "#ffdad6",
+			  "surface-container-highest": "#e2e2e2",
+			  "on-secondary-fixed": "#410002",
+			  "inverse-primary": "#c4c0ff",
+			  "primary-fixed": "#e3dfff",
+			  "on-secondary-container": "#fffbff"
+			},
+			"borderRadius": {
+			  "DEFAULT": "0.125rem",
+			  "lg": "0.25rem",
+			  "xl": "0.5rem",
+			  "full": "0.75rem"
+			},
+			"fontFamily": {
+			  "headline": ["DM Sans"],
+			  "body": ["Inter"],
+			  "label": ["DM Sans"]
+			}
+		  }
+		}
+	  }
+	</script>
+	<style>
+	  .material-symbols-outlined {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+	  }
+	  .ma-spacing { padding: clamp(2rem, 8vw, 8rem); }
+	  .judo-belt-accent { border-left-width: 4px; }
+	  .dojo-gradient {
+		background: radial-gradient(circle at top right, #2d2966 0%, #171150 100%);
+	  }
+	  .no-scrollbar::-webkit-scrollbar { display: none; }
+	  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+	  body { font-family: 'Inter', sans-serif; }
+	  h1, h2, h3, .label-technical { font-family: 'Space Grotesk', sans-serif; }
+
+	  /* ── SPA ── */
+	  .page-section { display: none; }
+	  .page-section.active {
+		display: block;
+		animation: pageFadeIn 0.3s ease forwards;
+	  }
+	  @keyframes pageFadeIn {
+		from { opacity: 0; transform: translateY(6px); }
+		to   { opacity: 1; transform: translateY(0); }
+	  }
+
+	  /* ── Termes non-traduisibles surlignés en jaune ── */
+	  mark {
+		background-color: #fef08a;
+		color: inherit;
+		padding: 0 2px;
+		border-radius: 2px;
+	  }
+	  .tatami-texture {
+		background-image: radial-gradient(#c8c5d1 0.5px, transparent 0.5px);
+		background-size: 24px 24px;
+	  }
+	  /* ══ BASE ═══════════════════════════════════════════════════ */
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
   body { font-family: 'Inter', sans-serif; }
-  h1, h2, h3, h4, h5, .label-technical { font-family: 'Space Grotesk', sans-serif; }
+  h1, h2, h3, h4, h5, .label-technical { font-family: 'DM Sans', sans-serif; }
 
   .page-section { display: none; }
   .page-section.active {
@@ -130,14 +165,15 @@
     margin-top: 1px;
   }
   .modal-progress-wrap {
-    flex: 1;
-    padding-left: 1.5rem;
+    width: 40%;
+    margin: 0 23% 0 auto;
+    padding-left: 0;
   }
   .modal-progress-meta {
     display: flex;
     justify-content: space-between;
     font-size: 0.65rem;
-    color: rgba(255,255,255,0.55);
+    color: rgba(218,218,218,0.99);
     font-family: 'Inter', sans-serif;
     margin-bottom: 0.3rem;
   }
@@ -531,24 +567,526 @@
     transform: translateY(-100%); transition: transform 0.3s;
   }
   #offline-bar.show { transform: translateY(0); }
+
 </style>
-</head>
-<body class="bg-surface text-on-surface font-body selection:bg-secondary selection:text-white">
+	</head>
+	<body class="bg-surface text-on-surface font-body selection:bg-secondary selection:text-white">
 
 
-<!-- ══════════════════════════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════════════════════════ -->
-<nav id="main-nav" class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl top-0 sticky z-50 shadow-xl shadow-indigo-950/5 dark:shadow-none">
-  <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-    <a class="nav-link font-medium text-xs uppercase tracking-widest font-label transition-colors duration-300 cursor-pointer" data-target="registration">Inscriptions</a>
-    <button class="bg-secondary text-on-secondary px-6 py-2 text-xs uppercase tracking-widest font-bold rounded-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer" onclick="navigateTo('registration')">
-      Rejoindre
-    </button>
+	<!-- ═══════════════════════════════════════════════════
+		 NAVIGATION — commune à toutes les pages
+	════════════════════════════════════════════════════ -->
+	<nav id="main-nav" class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl top-0 sticky z-50 shadow-xl shadow-indigo-950/5 dark:shadow-none">
+	  <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+		<a class="flex items-center gap-3 text-2xl font-black tracking-tighter text-indigo-950 dark:text-indigo-100 font-headline cursor-pointer" data-target="home"><img src="../Downloads/logo_EJT_cercle_2024.png" style="height:42px;width:auto;flex-shrink:0;" alt="Logo EJT"/>EJT BRUGES</a>
+		<div class="hidden md:flex items-center gap-10">
+		  <a class="nav-link font-medium text-xs uppercase tracking-widest font-label transition-colors duration-300 cursor-pointer" data-target="home">Accueil</a>
+		  <a class="nav-link font-medium text-xs uppercase tracking-widest font-label transition-colors duration-300 cursor-pointer" data-target="club">Club</a>
+		  <a class="nav-link font-medium text-xs uppercase tracking-widest font-label transition-colors duration-300 cursor-pointer" data-target="classes">Informations</a>
+		  <a class="nav-link font-medium text-xs uppercase tracking-widest font-label transition-colors duration-300 cursor-pointer" data-target="registration">Inscriptions</a>
+		  <a class="nav-link font-medium text-xs uppercase tracking-widest font-label transition-colors duration-300 cursor-pointer" data-target="documents">Documents</a>
+		</div>
+		
+	  </div>
+	</nav>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 01 — ACCUEIL
+════════════════════════════════════════════════════ -->
+<div id="page-home" class="page-section active">
+
+  <header class="relative min-h-[921px] flex items-center overflow-hidden bg-primary">
+    <div class="absolute inset-0 z-0">
+      <img alt="Judogi blanc brodé" class="w-full h-full object-cover opacity-50 mix-blend-luminosity"
+		   src="https://i.postimg.cc/8PX8q0h4/Gemini-Generated-Image-k2lcrzk2lcrzk2lc.png"/>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+      <div class="max-w-3xl">
+        <span class="inline-block px-3 py-1 bg-red-800 text-white text-[10px] font-black tracking-[0.3em] uppercase mb-6">FONDÉ EN 1974</span>
+        <h1 class="text-white text-6xl md:text-8xl font-black font-headline tracking-tighter leading-[0.9] mb-8">
+          TECHNIQUE.<br/>
+          <span class="text-secondary-fixed-dim">DISCIPLINE.</span><br/>
+          VICTOIRE.
+        </h1>
+        <p class="text-on-primary-container text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl">
+          Le judo est bien plus qu'un sport. C'est l'art de l'équilibre, de la force maîtrisée et de la persévérance technique au cœur de Bruges.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-red-800 text-white px-8 py-4 text-sm font-bold uppercase tracking-widest rounded transition-transform hover:scale-105 active:scale-95" onclick="navigateTo('registration')">
+            S'inscrire 2026-2027
+          </button>
+          <button class="border border-white/20 text-white px-8 py-4 text-sm font-bold uppercase tracking-widest rounded hover:bg-white hover:text-primary transition-all" onclick="navigateTo('club')">
+            Découvrir le Club
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="ma-spacing bg-surface">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16">
+        <h2 class="text-xs font-black tracking-[0.4em] uppercase text-secondary mb-4">L'Esprit du Judo</h2>
+        <h3 class="text-5xl font-bold font-headline text-primary tracking-tighter">NOS VALEURS</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface-container-low p-10 group hover:bg-primary transition-colors duration-500">
+          <div class="mb-12">
+            <span class="material-symbols-outlined text-4xl text-secondary group-hover:text-white transition-colors">timer</span>
+          </div>
+          <h4 class="text-2xl font-black font-headline text-primary group-hover:text-white mb-4 tracking-tight">DISCIPLINE</h4>
+          <p class="text-on-surface-variant group-hover:text-on-primary-container leading-relaxed">
+            Le contrôle de soi et le respect des règles forment la base de notre enseignement sur et en dehors du <mark>tatami</mark>.
+          </p>
+        </div>
+        <div class="bg-surface-container-low p-10 group hover:bg-primary transition-colors duration-500">
+          <div class="mb-12">
+            <span class="material-symbols-outlined text-4xl text-secondary group-hover:text-white transition-colors">handshake</span>
+          </div>
+          <h4 class="text-2xl font-black font-headline text-primary group-hover:text-white mb-4 tracking-tight">RESPECT</h4>
+          <p class="text-on-surface-variant group-hover:text-on-primary-container leading-relaxed">
+            Sans partenaire, il n'y a pas de progrès. Nous honorons nos adversaires et nos maîtres avec humilité.
+          </p>
+        </div>
+        <div class="bg-surface-container-low p-10 group hover:bg-primary transition-colors duration-500">
+          <div class="mb-12">
+            <span class="material-symbols-outlined text-4xl text-secondary group-hover:text-white transition-colors">groups</span>
+          </div>
+          <h4 class="text-2xl font-black font-headline text-primary group-hover:text-white mb-4 tracking-tight">AMITIÉ</h4>
+          <p class="text-on-surface-variant group-hover:text-on-primary-container leading-relaxed">
+            Une communauté soudée où l'entraide mutuelle permet à chacun d'atteindre ses objectifs personnels et sportifs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface-container-low ma-spacing">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
+      <div class="md:w-1/3">
+        <h2 class="text-xs font-black tracking-[0.4em] uppercase text-secondary mb-4">LE CLUB EN MOUVEMENT</h2>
+        <h3 class="text-5xl font-bold font-headline text-primary tracking-tighter leading-none mb-6">DERNIÈRES ACTUALITÉS</h3>
+        <p class="text-on-surface-variant mb-8">Restez informé des derniers exploits de nos athlètes et des prochains rendez-vous de la saison.</p>
+        <a class="inline-flex items-center gap-2 text-primary font-black uppercase tracking-widest text-xs hover:gap-4 transition-all cursor-pointer">
+          VOIR TOUT LE FLUX <span class="material-symbols-outlined">trending_flat</span>
+        </a>
+      </div>
+      <div class="md:w-2/3 space-y-4">
+        <article class="bg-white p-8 flex items-center justify-between shadow-sm hover:shadow-xl transition-shadow judo-belt-accent border-secondary">
+          <div>
+            <span class="text-[10px] font-bold text-secondary-container tracking-widest uppercase mb-2 block">Résultats Compétition</span>
+            <h4 class="text-xl font-bold font-headline text-primary">Open International de Bruges : 3 Médailles d'Or</h4>
+            <p class="text-on-surface-variant text-sm mt-2">Félicitations à notre équipe junior pour cette performance historique le week-end dernier.</p>
+          </div>
+          <div class="hidden sm:block">
+            <span class="material-symbols-outlined text-primary-container/20 text-5xl">military_tech</span>
+          </div>
+        </article>
+        <article class="bg-white p-8 flex items-center justify-between shadow-sm hover:shadow-xl transition-shadow judo-belt-accent border-primary">
+          <div>
+            <span class="text-[10px] font-bold text-primary tracking-widest uppercase mb-2 block">Événement Club</span>
+            <h4 class="text-xl font-bold font-headline text-primary">Stage de Noël avec Maître Tanaka</h4>
+            <p class="text-on-surface-variant text-sm mt-2">Une opportunité unique de perfectionner votre <mark>Ne-Waza</mark> avec un expert international.</p>
+          </div>
+          <div class="hidden sm:block">
+            <span class="material-symbols-outlined text-primary-container/20 text-5xl">calendar_today</span>
+          </div>
+        </article>
+        <article class="bg-white p-8 flex items-center justify-between shadow-sm hover:shadow-xl transition-shadow judo-belt-accent border-tertiary-container">
+          <div>
+            <span class="text-[10px] font-bold text-on-tertiary-container tracking-widest uppercase mb-2 block">Vie du Club</span>
+            <h4 class="text-xl font-bold font-headline text-primary">Passage de Grades : Session d'Hiver</h4>
+            <p class="text-on-surface-variant text-sm mt-2">Les inscriptions pour les examens de ceintures sont désormais ouvertes jusqu'au 15 décembre.</p>
+          </div>
+          <div class="hidden sm:block">
+            <span class="material-symbols-outlined text-primary-container/20 text-5xl">workspace_premium</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img alt="Texture tatami" class="w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoDr3Nz9Na3zlBABL8ch8kWAlI2Fs6dCGFnP-ttqAsZxuA5y_EStqZlRxcIbMN9UNjY5UNdCGKpJP3HN3AEpDVd1o39eaXsOc2RqxRGMkjcbIEkOnOki-15RqpDkcI4c6fv4xXQiZ9pHdCJoMvyxoh1uVbdpGAfqZN3qzlscN7_phqwtYv6Hy6btkazgYKG_3I9HAjhxReMhWo-zlOkz5fQH4dABfhPUniIrA4ApqaUPeERU9_fs5uoQu4qXwGGH_1_V0UugF0jf4"/>
+    </div>
+    <div class="max-w-5xl mx-auto px-8 relative z-10 text-center">
+      <h2 class="text-6xl md:text-8xl font-black font-headline tracking-tighter text-primary mb-10 leading-none">
+        REJOIGNEZ <span class="text-secondary">L'ÉLITE.</span>
+      </h2>
+      <div class="bg-white p-12 shadow-2xl inline-block max-w-2xl mx-auto border-t-8 border-secondary">
+        <p class="text-xl font-medium text-primary mb-8 font-headline">INSCRIPTIONS OUVERTES : SAISON 2024-2025</p>
+        <p class="text-on-surface-variant mb-10 leading-relaxed">
+          Que vous soyez débutant ou compétiteur chevronné, trouvez votre place au sein de l'EJT Bruges. Places limitées par groupe d'âge.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-secondary text-white px-10 py-5 font-bold uppercase tracking-widest rounded-lg hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-3 shadow-lg shadow-secondary/20" onclick="navigateTo('registration')">
+            S'INSCRIRE MAINTENANT <span class="material-symbols-outlined">app_registration</span>
+          </button>
+          <button class="bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest rounded-lg hover:bg-primary-container transition-colors" onclick="navigateTo('classes')">
+            HORAIRES DES COURS
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 02 — LE CLUB
+════════════════════════════════════════════════════ -->
+<div id="page-club" class="page-section">
+
+  <header class="relative h-[819px] flex items-center overflow-hidden dojo-gradient">
+    <div class="absolute inset-0 opacity-60">
+      <img alt="Judokas in action" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmPfgDD1nerXwwhJrTg5tyvX6NU5QjEEt56m5AnLJRyV0MsCEQR5FO45CLuYYrcrdxgskd9uVfpxflLJe1VdNo8z_-I_q4KCipWJNqHJ08ZW_Yrz3efyrAPRm4gt5LcAbDApdpwEv0V7CmlaGkTrE10IDudTq8fCPlUxOC_vkHvueiqmQjKS5HOK7IsAVJ7pq1itfuGP-TpRD4_nS3m9t1lHVGI6KxCyGZt8i-JyN-2zUAvhga-LZewxrxNvfqaADmqSY28WVKy1w"/>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-8 w-full">
+      <div class="max-w-3xl">
+        <span style="color: navajowhite;" class="font-label text-xs uppercase tracking-[0.3em] font-bold mb-4 block">Tradition &amp; Discipline</span>
+        <h1 class="text-white text-7xl md:text-9xl font-headline font-bold tracking-tighter leading-[0.85] mb-8">
+          EJT ES Burges <br/><span class="text-outline-variant/30"></span>
+        </h1>
+        <p class="text-white text-lg md:text-xl max-w-xl font-light leading-relaxed">
+          Fondé sur les principes du <mark>Kodokan</mark>, l'EJT Bruges est plus qu'un dojo. C'est une communauté dédiée à la recherche de la perfection technique et de l'équilibre mental.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-24 bg-surface">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+      <div class="md:col-span-7">
+        <div class="inline-flex items-center gap-4 mb-8">
+          <div class="h-[1px] w-12 bg-secondary"></div>
+          <span class="font-label text-xs uppercase tracking-widest font-bold text-secondary">Notre Histoire</span>
+        </div>
+        <h2 class="text-5xl font-headline font-bold tracking-tighter text-primary mb-12">L'HÉRITAGE DU <br/>TATAMI BRUGEOIS.</h2>
+        <div class="space-y-8 text-on-surface-variant leading-relaxed text-lg font-light">
+          <p>Depuis sa fondation au cœur de Bruges, notre club incarne la philosophie de Jigoro Kano. Ce qui a commencé comme un petit groupe de passionnés est devenu une institution respectée, formant des générations de judokas aux valeurs d'honneur et de respect.</p>
+          <p>Nous cultivons le « <mark>Seiryoku Zenyo</mark> » (efficacité maximale pour un effort minimal) non seulement comme une technique de combat, mais comme un art de vivre partagé par tous nos membres.</p>
+        </div>
+      </div>
+      <div class="md:col-span-5 relative">
+        <div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-lg shadow-2xl">
+          <img alt="dojo1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmrCqmXfbG7BwQTQQFLO_Z9wEl7SzXDMYqnUOuRMtR_93z-bi_GBzzZlYIyp0ZcdUPFYLEC0Q9Ex8o0otPwr3R9-S5YPkFvc84yzNZFFj-pdNisQdXGVYi2SE0nwHBarc_b4ZoRmjTJ6pm8Rm7tZGuSEmmuzvVjCSUpAme-i5JJ4PA2GiCxrKtS_zcSctGkvkmuUqtvyhw5vF7Wz8wULo6xI3x0qYCS_mNA3lGi5Ms04HqrPICyfVEf9rkqgKT5Aqmt2nB0WSJ3DY"/>
+        </div>
+        <div class="absolute -bottom-10 -left-10 bg-white p-8 shadow-xl max-w-[240px]">
+          <p class="font-headline text-5xl font-black text-secondary leading-none">1978</p>
+          <p class="font-label text-[10px] uppercase tracking-tighter font-bold mt-2 text-primary">Année de fondation à Bruges</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex justify-between items-end mb-16">
+        <div>
+          <span class="font-label text-xs uppercase tracking-widest font-bold text-secondary mb-4 block">L'Expertise</span>
+          <h2 class="text-5xl font-headline font-bold tracking-tighter text-primary">NOS PROFESSEURS.</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface-container-lowest p-2 group transition-all duration-500 hover:shadow-2xl">
+          <div class="aspect-[3/4] overflow-hidden mb-6 relative">
+            <img alt="Prof1" class="w-full h-full object-cover filter contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA_YwkJY5yXJhFg_s2emdg4xm67WENlVZ8ElIwv6-bL2Q02UDgQsOxMr2jO-pij9M0Ebl8HZG6kVC_nUKqpbCmb72hu5_4j6QgB8AyljEslc9AIUanWCJ3fsbGPTNYd0L2J5ozuQAyLuXa52CUOo_zUaXlhWl89O341JXXIW3ExYHjKlPiwSg8Gzhc6upBUH6L_3UaQ38TQ60Ni68w8wbrO4bm8DzBM04yA5S8BIp-LEeqwYamE3Gr7gtX_vDNzb_Rq1mFK7RfhFg"/>
+            <div class="absolute top-4 left-4">
+              <div class="bg-primary px-3 py-1 text-white font-label text-[10px] uppercase tracking-widest font-bold"><mark>Sensei</mark> Principal</div>
+            </div>
+          </div>
+          <div class="px-6 py-4">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="font-headline text-2xl font-bold tracking-tight">Jean-Marc Leroy</h3>
+              <div class="flex flex-col items-end">
+                <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold font-label">CEINTURE NOIRE</span>
+                <span class="text-secondary font-black text-xl">6ème DAN</span>
+              </div>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Directeur technique, expert en <mark>Ne-Waza</mark>. Plus de 30 ans d'enseignement du Judo originel.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-2 group transition-all duration-500 hover:shadow-2xl">
+          <div class="aspect-[3/4] overflow-hidden mb-6 relative">
+            <img alt="Prof2" class="w-full h-full object-cover filter contrast-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbzaMpxM86BpIRDeGafVI_2J-rLXQa-rlXv5OXjFlciA-2pdnQSagydy2v9v1TVnaujErz2xOHyIPwMUZjaPx87PkwXy3-Knz22dgAQcZGfNKUb3IMzOn_QxagzHItMWips95WRDBZFdnd_0WJDbGhMLjtZe1bbxPy0jcXB4X_Ben6GJ7UAIjdHEb4v3H_v3Z-4I7aOpkAtiO9Gj4TbmkRlXzU7lKSk0GjNZJg47MGxGb2jrszdeyCo8eKvpiqgQ99sXDMGwPbWps"/>
+          </div>
+          <div class="px-6 py-4">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="font-headline text-2xl font-bold tracking-tight">Sophie Vandame</h3>
+              <div class="flex flex-col items-end">
+                <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold font-label">CEINTURE NOIRE</span>
+                <span class="text-secondary font-black text-xl">4ème DAN</span>
+              </div>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Spécialiste de la formation jeunesse et de la compétition régionale. Championne de France 2015.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-2 group transition-all duration-500 hover:shadow-2xl">
+          <div class="aspect-[3/4] overflow-hidden mb-6 relative">
+            <img alt="Prof3" class="w-full h-full object-cover filter contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi1jv4iL-Pk-Id_5zVrwyN9tEil6rLeYc5_0zosY-NxNbD-b3pgPJpBg29uCcXfBPsxfJdCpLfL5qiOd-O_yVBXy99XXzvH7UCJfoXzypblplMvgPO-deLJ4p5ZxctDkdW5Le5x2gyYQgbuTB2onRJ8W5TGOs34PlN8kG7JNTejP9HB3TBR3TunpfOstK_4oDg68D949qO-zIwyMwqbrEN_64POkNZvhUDJxttQ0W0NoqnOeoaXgCGf-uftzqXfsg1ialSPJRxndY"/>
+          </div>
+          <div class="px-6 py-4">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="font-headline text-2xl font-bold tracking-tight">Pierre Dubois</h3>
+              <div class="flex flex-col items-end">
+                <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold font-label">CEINTURE NOIRE</span>
+                <span class="text-secondary font-black text-xl">3ème DAN</span>
+              </div>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Expert en <mark>Kata</mark> et self-défense. Veille à la transmission technique pure du style <mark>Kodokan</mark>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-surface overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative">
+            <div class="aspect-square bg-surface-container-high rounded-full absolute -top-20 -left-20 w-96 h-96 opacity-30 blur-3xl"></div>
+            <div class="relative z-10 space-y-8">
+              <span class="font-label text-xs uppercase tracking-widest font-bold text-secondary">Le Sanctuaire</span>
+              <h2 class="text-6xl font-headline font-bold tracking-tighter text-primary">NOS INFRASTRUCTURES.</h2>
+              <p class="text-on-surface-variant text-lg leading-relaxed font-light">Notre dojo à Bruges est conçu pour favoriser la concentration et l'effort. Avec plus de 400 m² de surface de combat, nous offrons un environnement sécurisé et professionnel.</p>
+              <ul class="space-y-6">
+                <li class="flex items-start gap-4">
+                  <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  <div>
+                    <h4 class="font-headline font-bold text-primary tracking-tight">TATAMIS OLYMPIQUES</h4>
+                    <p class="text-sm text-on-surface-variant">Surface de combat de haute densité pour une absorption optimale des chocs.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  <div>
+                    <h4 class="font-headline font-bold text-primary tracking-tight">ESPACE PRÉPARATION</h4>
+                    <p class="text-sm text-on-surface-variant">Zone de renforcement musculaire et d'étirements dédiée.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  <div>
+                    <h4 class="font-headline font-bold text-primary tracking-tight">ZONE DE RÉCUPÉRATION</h4>
+                    <p class="text-sm text-on-surface-variant">Vestiaires modernes et espace détente pour l'après-entraînement.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 order-1 lg:order-2 flex gap-4">
+          <div class="flex-1 mt-12">
+            <img alt="Dojo2" class="w-full h-[500px] object-cover shadow-2xl rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8lN05LlTOu05Hr5G4XpTrVfYaXQFlRKj1jicy31Gm0pc9bbisxHzU95ER9MVLYknPzbbhqcsHZSha3MqRGQjL5giBo6eoR8wR7GxEQgEtxw4FQs2Usn6qoxaGAvCIQtwkpQ6iq_iyfmQmZvuRuIzPwawfIqd0HdcYGx8vHTs4gUsh96d7-PKTriJ8riTk0XTRT2_XiNCzi_WvAtWoYSCZJ5ADfd8YLsMB6-gsSmC4qAscqwyTmXYtLFfrjP5oZ1SYEHNQcbOs9ng"/>
+          </div>
+          <div class="flex-1">
+            <img alt="ceintures" class="w-full h-[500px] object-cover shadow-2xl rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz9zkNUaOlh5adGGeKkBlS0GSd0FJRhPvkQza60vTQrjeeG_MxMwseBQhfUeJijZQHaOySdxdXtevsXUK8nzLgK_WZDy1y9_iEv5YNAvpmDM9MtdB-q882foFw9kiYeX0eQdIu28qgiJ6AD5D64GxFIBqzuq6kssAvikjiV0drvDxE0Q4wlkkWwIkLsxmTDjduwaeHCkxINjwJcxRQbKHj9LCuxaMGVWgXaEHglUSJnxX4-tpl2Zapmfsbx3vRwwsGkuCUpgvhRiY"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+      <h2 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter mb-8 italic">REJOIGNEZ LA FAMILLE.</h2>
+      <p class="text-xl font-light text-primary-fixed mb-12 max-w-2xl mx-auto uppercase tracking-widest text-xs">Le premier pas est le plus difficile. Nous sommes là pour vous accompagner.</p>
+      <div class="flex flex-col md:flex-row gap-6 justify-center">
+        <button class="bg-secondary px-10 py-4 font-label text-sm uppercase tracking-[0.2em] font-bold hover:scale-105 transition-all" onclick="navigateTo('registration')">Cours d'essai gratuit</button>
+        <button class="border border-outline-variant/30 px-10 py-4 font-label text-sm uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-primary transition-all" onclick="navigateTo('classes')">Nos tarifs</button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-club -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 03 — NOS COURS (STRUCTURE FINALE : JUDO + 2 BLOCS)
+═══════════════════════════════════════════════════ -->
+<div id="page-classes" class="page-section">
+<main class="max-w-7xl mx-auto px-8 py-16">
+
+  <!-- SECTION INTRODUCTION (Inchangée) -->
+  <section class="mb-24">
+    <span class="text-xs uppercase tracking-widest font-bold text-secondary mb-4 block">Saison 2026/2027</span>
+    <h1 class="text-7xl font-bold tracking-tighter text-primary mb-6 leading-none">INFORMATIONS </h1>
+    <p class="text-on-surface-variant max-width-2xl text-lg leading-relaxed">Une progression méthodique à travers les disciplines du Judo.<br>Efficacité maximale, effort minimal.</p>
+  </section>
+
+  <!-- GRILLE PRINCIPALE -->
+  <div class="flex flex-col gap-8 mb-30">
+	  <h2 class="text-5xl font-bold tracking-tighter text-primary mb-5">Cours 2026-2027</h2>
+    
+    <!-- SECTION PRINCIPALE -->
+<div class="space-y-8">
+
+  <!-- BLOC 1 : LE GRAND BLOC "JUDO" -->
+  <div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-secondary shadow-sm">
+    <div class="flex items-center gap-4 mb-8">
+      <h3 class="text-3xl font-black tracking-tighter text-primary uppercase">Judo</h3>
+    </div>
+    
+    <!-- Grille des sous-blocs blancs pour Judo -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Sous-bloc Judo 1 -->
+      <div class="bg-white p-6 rounded shadow-sm border border-outline-variant/20">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-4">5-6 ANS (né en 2021 et 2020)</p>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+            <span class="text-m font-bold text-on-surface-variant">Mardi</span>
+            <span class="font-bold text-primary">17:30 - 18:30</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-m font-bold text-on-surface-variant">Vendredi</span>
+            <span class="font-bold text-primary">17:30 - 18:30</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sous-bloc Judo 2 -->
+      <div class="bg-white p-6 rounded shadow-sm border border-outline-variant/20">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-4">7-10 ANS (né entre 2019 et 2016)</p>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+            <span class="text-m font-bold text-on-surface-variant">Mardi</span>
+            <span class="font-bold text-primary">18:30 - 20:00</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-m font-bold text-on-surface-variant">Vendredi</span>
+            <span class="font-bold text-primary">18:30 - 20:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sous-bloc Judo 3 -->
+      <div class="bg-white p-6 rounded shadow-sm border border-outline-variant/20">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-4">11 ANS ET PLUS (né à partir de 2015)</p>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+            <span class="text-m font-bold text-on-surface-variant">Mardi</span>
+            <span class="font-bold text-primary">20:00 - 22:00</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-m font-bold text-on-surface-variant">Vendredi</span>
+            <span class="font-bold text-primary">20:00 - 22:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
+
+  <!-- LIGNE 2 : LES DEUX BLOCS (BabyJudo & Jujitsu) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Bloc BabyJudo -->
+    <div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-secondary shadow-sm">
+      <h3 class="text-3xl font-black tracking-tighter text-primary uppercase mb-6">BabyJudo</h3>
+      
+      <!-- Sous-bloc blanc pour BabyJudo -->
+      <div class="bg-white p-6 rounded shadow-sm border border-outline-variant/20">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-4">4 ANS (né en 2022)</p>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+            <span class="text-m font-bold text-on-surface-variant">Mercredi</span>
+            <span class="font-bold text-primary">17:30 - 18:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloc Jujitsu -->
+    <div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-secondary shadow-sm">
+      <h3 class="text-3xl font-black tracking-tighter text-primary uppercase mb-6">Jujitsu</h3>
+      
+      <!-- Sous-bloc blanc pour Jujitsu -->
+      <div class="bg-white p-6 rounded shadow-sm border border-outline-variant/20">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-4"></p>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+            <span class="text-m font-bold text-on-surface-variant">Mercredi</span>
+            <span class="font-bold text-primary">19:30 - 21:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <!-- SECTION COTISATIONS ET ÉQUIPEMENT (Inchangée) -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pb-16">
+    <div>
+      <h2 class="text-5xl font-bold tracking-tighter text-primary mb-7">TARIFS 2026-2027</h2>
+<div class="space-y-4">
+	
+ <!-- BLOC 0 -->
+  <div class="bg-surface-container-low p-6 flex justify-between items-center group hover:bg-surface-container transition-colors">
+    <div class="text-left">
+      <h4 class="text-xl font-bold text-primary">Licence fédérale&nbsp;</h4>
+      <span class="text-xs font-bold text-on-surface-variant">*Payable en plusieurs fois <br>*Chèque, Espèces, CB via HelloAsso</span>
+    </div>
+    <div class="text-3xl font-black text-primary">46 €<span class="text-sm font-normal text-on-surface-variant">&nbsp;</span></div>
+  </div>
+	
+  <!-- BLOC 1 -->
+  <div class="bg-surface-container-low p-6 flex justify-between items-center group hover:bg-surface-container transition-colors">
+    <div class="text-left">
+      <h4 class="text-xl font-bold text-primary">Adhésion annuelle Judo</h4>
+      <span class="text-xs font-bold text-on-surface-variant">*Payable en plusieurs fois <br>*Chèque, Espèces, CB via HelloAsso</span>
+    </div>
+    <div class="text-3xl font-black text-primary">270 €<span class="text-sm font-normal text-on-surface-variant">/an</span></div>
+  </div>
+
+  <!-- BLOC 2 -->
+  <div class="bg-surface-container-low p-6 flex justify-between items-center group hover:bg-surface-container transition-colors">
+    <div class="text-left">
+      <h4 class="text-xl font-bold text-primary">Adhésion annuelle BabyJudo</h4>
+      <span class="text-xs font-bold text-on-surface-variant">*Payable en plusieurs fois <br>*Chèque, Espèces, CB via HelloAsso</span>
+    </div>
+    <div class="text-3xl font-black text-primary">210 €<span class="text-sm font-normal text-on-surface-variant">/an</span></div>
+  </div>
+
+  <!-- BLOC 3 -->
+  <div class="bg-surface-container-low p-6 flex justify-between items-center group hover:bg-surface-container transition-colors">
+    <div class="text-left">
+      <h4 class="text-xl font-bold text-primary">Adhésion annuelle Jujitsu</h4>
+      <span class="text-xs font-bold text-on-surface-variant">*Payable en plusieurs fois <br>*Chèque, Espèces, CB via HelloAsso</span>
+    </div>
+    <div class="text-3xl font-black text-primary">210 €<span class="text-sm font-normal text-on-surface-variant">/an</span></div>
+  </div>
+
+</div>
+
+    </div>
+    <div class="bg-surface-container-low p-12 rounded-lg">
+      <h2 class="text-5xl font-bold tracking-tighter text-primary mb-8 leading-tight">L'ÉQUIPEMENT<br/>NÉCESSAIRE</h2>
+      <div class="flex gap-6 mb-12">
+        <div class="w-16 h-16 bg-white flex items-center justify-center rounded-lg shadow-sm">
+          <span class="material-symbols-outlined text-primary text-3xl">checkroom</span>
+        </div>
+        <div class="flex-1">
+          <h4 class="text-xl font-bold text-primary uppercase tracking-tighter mb-2">JUDOGI (KIMONO)</h4>
+          <p class="text-on-surface-variant leading-relaxed text-sm">Un kimono blanc est obligatoire pour tous les cours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+<!-- /PAGE 03 -->
 
 
+
+<!-- ═══════════════════════════════════════════════════
+PAGE 04 — INSCRIPTIONS
+════════════════════════════════════════════════════ -->
 <!-- ══════════════════════════════════════════════════════════
      PAGE — INSCRIPTIONS
 ══════════════════════════════════════════════════════════ -->
@@ -671,24 +1209,167 @@
 
 
 
-<!-- ══════════════════════════════════════════════════════════
-     OFFLINE BAR
-══════════════════════════════════════════════════════════ -->
-<div id="offline-bar">⚡ Connexion internet perdue — vérifiez votre réseau</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PAGE 05 — DOCUMENTS
+════════════════════════════════════════════════════ -->
+<div id="page-documents" class="page-section">
+<main class="pt-12 pb-20 px-6 max-w-7xl mx-auto">
+
+    <!-- Hero Header -->
+    <header class="py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute -right-2 top-0 opacity-10 pointer-events-none select-none">
+            <span class="text-[20vw] font-black font-headline leading-none">JUDO</span>
+        </div>
+        <div class="relative z-10">
+            <p class="font-label text-sm uppercase tracking-[0.3em] text-secondary font-bold mb-4">Espace Membres</p>
+            <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-primary max-w-3xl leading-none">
+                DOCUMENTS <br>
+            </h1>
+            <br><br><br>
+        </div>
+    </header>
+
+    <!-- Download Center Section -->
+    <section class="mb-24">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <h2 class="font-headline text-3xl font-bold tracking-tight text-primary">Download Center</h2>
+                <p class="text-on-surface-variant max-w-md mt-2">Accédez aux ressources officielles du club. Documents mis à jour pour la saison 2026-2027.</p>
+            </div>
+            <div class="flex gap-2">
+                <div class="px-4 py-2 bg-surface-container-low font-label text-xs font-bold border-l-4 border-primary">OFFICIEL</div>
+                <div class="px-4 py-2 bg-surface-container-low font-label text-xs font-bold border-l-4 border-secondary">PDF</div>
+            </div>
+        </div>
+
+         <!-- Bento Grid Documents -->
+        <div class="flex flex-col gap-6">
+            <!-- LIGNE 1 : UN SEUL BLOC (Centré) -->
+            <div class="flex justify-center">
+                <div class="w-full md:w-1/2">
+                    <div class="group bg-surface-container-lowest p-8 flex flex-lar col justify-between h-[320px] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(26,28,28,0.06)] relative overflow-hidden border border-outline-variant/20">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-surface-container opacity-20 rotate-45 translate-x-8 -translate-y-8"></div>
+                        <div class="relative z-10">
+                            <div class="mb-6 inline-flex items-center justify-center w-12 h-12 bg-primary text-white">
+                                <span class="material-symbols-outlined">description</span>
+                            </div>
+                            <h3 class="font-headline text-xl font-bold text-primary mb-3 leading-tight">Règlement Intérieur</h3>
+                            <p class="text-sm text-on-surface-variant line-clamp-3">Les codes de conduite, l'étiquette du dojo et les engagements mutuels au sein de l'EJT Bruges.</p>
+                        </div>
+                        <button class="flex items-center gap-2 font-label text-xs font-black uppercase tracking-widest text-secondary group-hover:gap-4 transition-all">
+                            Télécharger <span class="material-symbols-outlined text-sm">download</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIGNE 2 : DEUX BLOCS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group bg-surface-container-lowest p-8 flex flex-col justify-between h-[320px] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(26,28,28,0.06)] relative overflow-hidden border border-outline-variant/20">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-secondary opacity-10 rotate-45 translate-x-8 -translate-y-8"></div>
+                    <div class="relative z-10">
+                        <div class="mb-6 inline-flex items-center justify-center w-12 h-12 bg-secondary text-white">
+                            <span class="material-symbols-outlined">assignment</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3 leading-tight">Questionnaire médical</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3">Formulaire de santé obligatoire pour toute nouvelle inscription ou renouvellement.</p>
+                    </div>
+                    <button class="flex items-center gap-2 font-label text-xs font-black uppercase tracking-widest text-secondary group-hover:gap-4 transition-all">
+                        Télécharger <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+                <div class="group bg-surface-container-lowest p-8 flex flex-col justify-between h-[320px] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(26,28,28,0.06)] relative overflow-hidden border border-outline-variant/20">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-primary opacity-10 rotate-45 translate-x-8 -translate-y-8"></div>
+                    <div class="relative z-10">
+                        <div class="mb-6 inline-flex items-center justify-center w-12 h-12 bg-primary text-white">
+                            <span class="material-symbols-outlined">fact_check</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3 leading-tight">Attestation médicale</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3">Certificat médical attestant de l'aptitude à la pratique du Judo en compétition.</p>
+                    </div>
+                    <button class="flex items-center gap-2 font-label text-xs font-black uppercase tracking-widest text-secondary group-hover:gap-4 transition-all">
+                        Télécharger <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- LIGNE 3 : DEUX BLOCS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group bg-surface-container-lowest p-8 flex flex-col justify-between h-[320px] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(26,28,28,0.06)] relative overflow-hidden border border-outline-variant/20">
+                    <div class="relative z-10">
+                        <div class="mb-6 inline-flex items-center justify-center w-12 h-12 bg-primary text-white">
+                            <span class="material-symbols-outlined">assignment</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3 leading-tight">Questionnaire médical V2</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3">Version mise à jour pour la saison 2026-2027.</p>
+                    </div>
+                    <button class="flex items-center gap-2 font-label text-xs font-black uppercase tracking-widest text-secondary group-hover:gap-4 transition-all">
+                        Télécharger <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+                <div class="group bg-surface-container-lowest p-8 flex flex-col justify-between h-[320px] transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(26,28,28,0.06)] relative overflow-hidden border border-outline-variant/20">
+                    <div class="relative z-10">
+                        <div class="mb-6 inline-flex items-center justify-center w-12 h-12 bg-secondary text-white">
+                            <span class="material-symbols-outlined">fact_check</span>
+                        </div>
+                        <h3 class="font-headline text-xl font-bold text-primary mb-3 leading-tight">Attestation médicale V2</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3">Document de suivi médical actualisé.</p>
+                    </div>
+                    <button class="flex items-center gap-2 font-label text-xs font-black uppercase tracking-widest text-secondary group-hover:gap-4 transition-all">
+                        Télécharger <span class="material-symbols-outlined text-sm">download</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section> <!-- FIN DE LA GRILLE DES DOCUMENTS -->
+
+    <!-- Document Deposit Section -->
+    <section class="bg-surface-container-low p-8 md:p-16 relative overflow-hidden">
+        <div class="absolute inset-0 tatami-texture opacity-20 pointer-events-none"></div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <h2 class="font-headline text-4xl font-bold text-primary tracking-tight mb-6">Dépôt de Documents</h2>
+                <p class="text-on-surface-variant mb-8 leading-relaxed">
+                    Soumettez vos certificats médicaux ou dossiers d'inscription complets en toute sécurité.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                        <div class="font-bold text-primary">Certificat Médical</div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                        <div class="font-bold text-primary">Dossier de Bourse</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:col-span-7">
+                <div class="bg-white p-2 shadow-sm">
+                    <div class="border-2 border-dashed border-outline-variant p-10 md:p-20 text-center flex flex-col items-center justify-center transition-colors hover:bg-surface-container-low cursor-pointer">
+                        <div class="w-16 h-16 rounded-full bg-surface-container mb-6 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-3xl text-primary">upload_file</span>
+                        </div>
+                        <h4 class="font-headline text-xl font-bold text-primary mb-2">Glisser-déposer vos fichiers ici</h4>
+                        <p class="text-on-surface-variant mb-8 text-sm max-w-xs mx-auto">Formats acceptés : PDF, JPG, PNG. Taille maximale 10MB.</p>
+                        <button class="bg-secondary text-white px-8 py-4 font-label font-bold text-sm tracking-widest transition-transform hover:scale-105 active:scale-95 shadow-lg">
+                            DÉPOSER UN FICHIER
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+    </div> 
+
+    <!-- 2. SÉPARATION : Un espace visuel net avec une bordure légère -->
 
 
-<!-- ══════════════════════════════════════════════════════════
-     PAGE — FORMULAIRE ADHÉSION
-══════════════════════════════════════════════════════════ -->
 <div id="page-adhesion" class="page-section">
 
   <!-- En-tête sticky -->
   <div class="form-page-header">
-    <img src="logo_EJT_cercle_2024.png" style="height:42px;width:auto;flex-shrink:0;" alt="Logo EJT"/>
-    <div style="flex-shrink:0;">
-      <div class="modal-club-name">EJT Bruges</div>
-      <div class="modal-form-sub" id="adh-header-sub">Dossier d'adhésion — Saison 2026-2027</div>
-    </div>
     <div class="modal-progress-wrap" id="adh-progress-area">
       <div class="modal-progress-meta">
         <span id="adh-prog-label"></span>
@@ -1017,61 +1698,14 @@
   </div></div>
   </div><!-- #form-adhesion -->
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-100 dark:bg-slate-900 border-t border-transparent">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 w-full px-8 py-16 max-w-7xl mx-auto">
-      <div class="col-span-1 md:col-span-2">
-        <h4 class="text-xl font-black tracking-tighter text-indigo-950 dark:text-indigo-100 font-headline mb-6">EJT BRUGES</h4>
-        <p class="text-indigo-900/60 dark:text-indigo-300/60 max-w-md text-sm leading-relaxed mb-8">
-          Le club de judo de référence à Bruges. Un enseignement de qualité, le respect des traditions et l'ambition sportive pour tous les âges. Affilié à la Fédération Française de Judo.
-        </p>
-        <div class="flex gap-4">
-          <a class="text-indigo-950 hover:text-secondary cursor-pointer"><span class="material-symbols-outlined">social_leaderboard</span></a>
-          <a class="text-indigo-950 hover:text-secondary cursor-pointer"><span class="material-symbols-outlined">camera</span></a>
-        </div>
-      </div>
-      <div>
-        <h5 class="text-xs uppercase tracking-widest font-bold font-label text-red-700 dark:text-red-600 mb-6">Légal</h5>
-        <ul class="space-y-4">
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Politique de confidentialité</a></li>
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Conditions d'utilisation</a></li>
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Règlement des compétitions</a></li>
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Protocole du <mark>tatami</mark></a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-xs uppercase tracking-widest font-bold font-label text-red-700 dark:text-red-600 mb-6">Contact</h5>
-        <address class="not-italic text-sm text-indigo-900/60 dark:text-indigo-300/60 space-y-2">
-          <p>Dojo Municipal de Bruges</p>
-          <p>Avenue des Sports, 33520 Bruges</p>
-          <p class="pt-4 font-bold text-indigo-950">admin@ejtbruges.be</p>
-        </address>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-8 py-8 border-t border-indigo-950/5 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-xs font-bold tracking-widest font-label text-indigo-900/60 uppercase">© 2024 EJT BRUGES. EFFICACITÉ MAXIMALE, EFFORT MINIMAL.</p>
-      <div class="flex gap-8">
-        <span class="text-[10px] font-black text-secondary uppercase tracking-[0.2em]"><mark>KODOKAN</mark> AFFILIÉ</span>
-        <span class="text-[10px] font-black text-primary/40 uppercase tracking-[0.2em]"><mark>FFJDA</mark> ENREGISTRÉ</span>
-      </div>
-    </div>
-  </footer>
 
 </div><!-- #page-adhesion -->
 
 
-<!-- ══════════════════════════════════════════════════════════
-     PAGE — FORMULAIRE COURS D'ESSAI
-══════════════════════════════════════════════════════════ -->
 <div id="page-essai" class="page-section">
 
   <!-- En-tête sticky -->
   <div class="form-page-header">
-    <img src="logo_EJT_cercle_2024.png" style="height:42px;width:auto;flex-shrink:0;" alt="Logo EJT"/>
-    <div style="flex-shrink:0;">
-      <div class="modal-club-name">EJT Bruges</div>
-      <div class="modal-form-sub">Cours d'essai — Saison 2026-2027</div>
-    </div>
     <div class="modal-progress-wrap" id="ess-progress-area">
       <div class="modal-progress-meta">
         <span id="ess-prog-label"></span>
@@ -1269,57 +1903,63 @@
   </div></div>
   </div><!-- #form-cours -->
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-100 dark:bg-slate-900 border-t border-transparent">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 w-full px-8 py-16 max-w-7xl mx-auto">
-      <div class="col-span-1 md:col-span-2">
-        <h4 class="text-xl font-black tracking-tighter text-indigo-950 dark:text-indigo-100 font-headline mb-6">EJT BRUGES</h4>
-        <p class="text-indigo-900/60 dark:text-indigo-300/60 max-w-md text-sm leading-relaxed mb-8">
-          Le club de judo de référence à Bruges. Un enseignement de qualité, le respect des traditions et l'ambition sportive pour tous les âges. Affilié à la Fédération Française de Judo.
-        </p>
-        <div class="flex gap-4">
-          <a class="text-indigo-950 hover:text-secondary cursor-pointer"><span class="material-symbols-outlined">social_leaderboard</span></a>
-          <a class="text-indigo-950 hover:text-secondary cursor-pointer"><span class="material-symbols-outlined">camera</span></a>
-        </div>
-      </div>
-      <div>
-        <h5 class="text-xs uppercase tracking-widest font-bold font-label text-red-700 dark:text-red-600 mb-6">Légal</h5>
-        <ul class="space-y-4">
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Politique de confidentialité</a></li>
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Conditions d'utilisation</a></li>
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Règlement des compétitions</a></li>
-          <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Protocole du <mark>tatami</mark></a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-xs uppercase tracking-widest font-bold font-label text-red-700 dark:text-red-600 mb-6">Contact</h5>
-        <address class="not-italic text-sm text-indigo-900/60 dark:text-indigo-300/60 space-y-2">
-          <p>Dojo Municipal de Bruges</p>
-          <p>Avenue des Sports, 33520 Bruges</p>
-          <p class="pt-4 font-bold text-indigo-950">admin@ejtbruges.be</p>
-        </address>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-8 py-8 border-t border-indigo-950/5 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-xs font-bold tracking-widest font-label text-indigo-900/60 uppercase">© 2024 EJT BRUGES. EFFICACITÉ MAXIMALE, EFFORT MINIMAL.</p>
-      <div class="flex gap-8">
-        <span class="text-[10px] font-black text-secondary uppercase tracking-[0.2em]"><mark>KODOKAN</mark> AFFILIÉ</span>
-        <span class="text-[10px] font-black text-primary/40 uppercase tracking-[0.2em]"><mark>FFJDA</mark> ENREGISTRÉ</span>
-      </div>
-    </div>
-  </footer>
 
 </div><!-- #page-essai -->
+		<div class="w-full h-20 bg-slate-50 border-t border-slate-200"></div>
 
 
-<!-- ══════════════════════════════════════════════════════════
-     JAVASCRIPT — SPA Inscription2
-══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════
+     FOOTER — commun à toutes les pages
+════════════════════════════════════════════════════ -->
+
+<footer class="bg-slate-100 dark:bg-slate-900 border-t border-transparent">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 w-full px-8 py-16 max-w-7xl mx-auto">
+    <div class="col-span-1 md:col-span-2">
+      <h4 class="text-xl font-black tracking-tighter text-indigo-950 dark:text-indigo-100 font-headline mb-6">EJT BRUGES</h4>
+      <p class="text-indigo-900/60 dark:text-indigo-300/60 max-w-md text-sm leading-relaxed mb-8">
+        Le club de judo de référence à Bruges. Un enseignement de qualité, le respect des traditions et l'ambition sportive pour tous les âges. Affilié à la Fédération Française de Judo.
+      </p>
+      <div class="flex gap-4">
+        <a class="text-indigo-950 hover:text-secondary cursor-pointer"><span class="material-symbols-outlined">social_leaderboard</span></a>
+        <a class="text-indigo-950 hover:text-secondary cursor-pointer"><span class="material-symbols-outlined">camera</span></a>
+      </div>
+    </div>
+    <div>
+      <h5 class="text-xs uppercase tracking-widest font-bold font-label text-red-700 dark:text-red-600 mb-6">Légal</h5>
+      <ul class="space-y-4">
+        <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Politique de confidentialité</a></li>
+        <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Conditions d'utilisation</a></li>
+        <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Règlement des compétitions</a></li>
+        <li><a class="text-sm text-indigo-900/60 dark:text-indigo-300/60 hover:text-indigo-950 transition-all cursor-pointer">Protocole du <mark>tatami</mark></a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="text-xs uppercase tracking-widest font-bold font-label text-red-700 dark:text-red-600 mb-6">Contact</h5>
+      <address class="not-italic text-sm text-indigo-900/60 dark:text-indigo-300/60 space-y-2">
+        <p>Dojo Municipal de Bruges</p>
+        <p>Avenue des Sports, 33520 Bruges</p>
+        <p class="pt-4 font-bold text-indigo-950"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2746434a4e4967424d53455552404254094542">ejt.esbruges@gmail.com</a></p>
+      </address>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-8 py-8 border-t border-indigo-950/5 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-xs font-bold tracking-widest font-label text-indigo-900/60 uppercase">© 2024 EJT BRUGES. EFFICACITÉ MAXIMALE, EFFORT MINIMAL.</p>
+    <div class="flex gap-8">
+      <span class="text-[10px] font-black text-secondary uppercase tracking-[0.2em]"><mark>KODOKAN</mark> AFFILIÉ</span>
+      <span class="text-[10px] font-black text-primary/40 uppercase tracking-[0.2em]"><mark>FFJDA</mark> ENREGISTRÉ</span>
+    </div>
+  </div>
+</footer>
+
+		
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT — Routeur SPA
+════════════════════════════════════════════════════ -->
 <script>
-  const PAGES = ['registration', 'adhesion', 'essai'];
+  const PAGES = ['home', 'club', 'classes', 'registration', 'documents', 'adhesion', 'essai'];
   const NAV_ACTIVE   = 'text-red-700 dark:text-red-600 font-black border-b-2 border-red-700'.split(' ');
   const NAV_INACTIVE = 'text-indigo-950 dark:text-indigo-300 font-medium hover:text-red-600'.split(' ');
-
   function navigateTo(target) {
     if (!PAGES.includes(target)) return;
     PAGES.forEach(id => {
@@ -1334,7 +1974,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
     history.pushState({ page: target }, '', '#' + target);
   }
-
   document.querySelectorAll('.nav-link, [data-target]').forEach(el => {
     if (el.tagName === 'BUTTON') return;
     el.addEventListener('click', () => {
@@ -1342,18 +1981,24 @@
       if (target) navigateTo(target);
     });
   });
-
   window.addEventListener('popstate', (e) => {
-    const page = e.state?.page || 'registration';
+    const page = e.state?.page || 'home';
     navigateTo(page);
   });
-
   (function init() {
     const hash = window.location.hash.replace('#', '');
-    const target = PAGES.includes(hash) ? hash : 'registration';
+    const target = PAGES.includes(hash) ? hash : 'home';
     navigateTo(target);
   })();
 </script>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     OFFLINE BAR
+══════════════════════════════════════════════════════════ -->
+<div id="offline-bar">⚡ Connexion internet perdue — vérifiez votre réseau</div>
+
+
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -1983,5 +2628,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+
 </body>
 </html>
